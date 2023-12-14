@@ -1,4 +1,4 @@
-package com.hfad.todolist.database
+package com.hfad.todolist1.database
 
 import androidx.room.Dao
 import androidx.room.Insert
