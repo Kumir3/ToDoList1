@@ -2,11 +2,9 @@ package com.hfad.todolist1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
+import android.widget.*
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.hfad.todolist1.database.Database
 import com.hfad.todolist1.database.Entity
@@ -33,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         editTextTask = findViewById(R.id.editTextTask)
         buttonAdd = findViewById(R.id.buttonAdd)
         listViewTasks = findViewById(R.id.listViewTasks)
+
+        val taskAdapter = Adapter(tasks)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView) // Замените на ваш идентификатор RecyclerView
+        recyclerView.adapter = taskAdapter
 
         tasks = mutableListOf()
         arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, tasks)

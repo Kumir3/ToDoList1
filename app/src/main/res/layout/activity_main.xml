@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
     <EditText
         android:id="@+id/editTextTask"
@@ -31,16 +32,33 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="155dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="101dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/taskTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="461dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="405dp"
+        android:layout_height="282dp"
+        android:layout_below="@id/editTextTask"
+        tools:layout_editor_absoluteX="-10dp"
+        tools:layout_editor_absoluteY="102dp"
+        tools:ignore="MissingConstraints" /> <!-- Если нужно разместить под другим представлением -->
+        android:layout_marginTop="8dp" <!-- Пример отступа сверху -->
+        android:padding="8dp" <!-- Пример внутренних отступов -->
+        android:clipToPadding="false" <!-- Для отображения последнего элемента за пределами отступов -->
+        android:background="#F0F0F0" <!-- Пример цвета фона -->
+        android:scrollbars="vertical" <!-- Прокрутка по вертикали -->
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
